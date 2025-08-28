@@ -23,6 +23,8 @@ linters:
     - ireturn
     - forbidigo
     - gochecknoinits
+    - wsl_v5
+    - noinlineerr
   settings:
     cyclop:
       max-complexity: 30

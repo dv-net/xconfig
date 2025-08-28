@@ -38,6 +38,7 @@ type BaseURLs struct {
 // Config is part of text fixtures.
 type Config struct {
 	Anon
+
 	GoHard  bool
 	Redis   Redis
 	Rethink RethinkConfig
