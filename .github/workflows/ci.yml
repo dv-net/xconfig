@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    container: golangci/golangci-lint:latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run golangci-lint
+        run: golangci-lint run
+
+  test:
+    runs-on: ubuntu-latest
+    container: golang:1.24
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: go test -v ./...
